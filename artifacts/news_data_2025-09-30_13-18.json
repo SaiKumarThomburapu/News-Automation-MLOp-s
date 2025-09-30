@@ -1,0 +1,327 @@
+{
+  "timestamp": "2025-09-30T13:18:31.397237",
+  "total_articles": 60,
+  "total_images": 59,
+  "categories": [
+    "politics",
+    "movies",
+    "entertainment",
+    "sports",
+    "business",
+    "technology"
+  ],
+  "categorized_news": {
+    "politics": [
+      {
+        "content": "India/Sep 30, 2025National Hunter Alliance Summit 2025 highlights urgent gaps in rare disease policy and patient careNEW DELHI: The National Hunter Alliance Summit 2025, held on 27th September'2025 in New Delhi, brought together patients, caregivers, medical experts, policymakers, and advocates to address the urgent and ongoing challenges faced by individuals",
+        "image_path": "artifacts/images/politics_toi_politics_0.jpg",
+        "url": "https://timesofindia.indiatimes.com/india/national-hunter-alliance-summit-2025-highlights-urgent-gaps-in-rare-disease-policy-and-patient-care/articleshow/124228630.cms"
+      },
+      {
+        "content": "IMD issues heavy rain alerts for Gujarat, Bengal; light showers in Mumbai, Pune",
+        "image_path": "artifacts/images/politics_ht_politics_1.jpg",
+        "url": "https://www.hindustantimes.com/india-news/imd-issues-heavy-rain-alerts-for-gujarat-bengal-northeast-and-south-light-showers-in-mumbai-pune-weather-updates-101759201123520.html"
+      },
+      {
+        "content": "Hours after arrest, Wangchuk wife says: ‘We are with India and truth…national machinery unleashed to tarnish his image’",
+        "image_path": "artifacts/images/politics_ie_politics_2.jpg",
+        "url": "https://indianexpress.com/article/political-pulse/hours-after-arrest-wangchuk-wife-says-we-are-with-india-and-truth-national-machinery-unleashed-to-tarnish-his-image-10273778/"
+      },
+      {
+        "content": "Postal ballots: The numbers, and why Opposition favours the new formula",
+        "image_path": "artifacts/images/politics_ie_politics_3.png",
+        "url": "https://indianexpress.com/article/political-pulse/postal-ballots-the-numbers-and-why-opposition-favours-the-new-formula-10278542/"
+      },
+      {
+        "content": "India/Sep 30, 2025‘Mishandled due to foreign pressure’: BJP blasts Chidambaram over 26/11 retaliation remark; questions role of Sonia GandhiThe Bhartiya Janta Party criticized former union home minister P Chidambaram. He recently stated the UPA government did not retaliate after the 26/11 Mumbai attacks. Chidambaram mentioned foreign pressure influenced this decision. The BJP accused the Congress of mishandling the situation. They questioned the UPA's accountability regarding the terror incident. This sparked a political debate.",
+        "image_path": "artifacts/images/politics_toi_politics_4.jpg",
+        "url": "https://timesofindia.indiatimes.com/india/mishandled-due-to-foreign-pressure-bjp-blasts-chidambaram-over-26/11-retaliation-remark-questions-role-of-sonia-gandhi/articleshow/124226495.cms"
+      },
+      {
+        "content": "Karur tragedy: Stampede FIR names 3 of Vijay’s party; 1 arrested",
+        "image_path": "artifacts/images/politics_toi_politics_5.jpg",
+        "url": "https://timesofindia.indiatimes.com/india/karur-tragedy-stampede-fir-names-3-of-vijays-party-1-arrested/articleshow/124220481.cms"
+      },
+      {
+        "content": "Prashant Kishor ‘dares’ Nitish to remove, arrest Bihar Dy CM Samrat Choudhary",
+        "image_path": "artifacts/images/politics_ht_politics_6.jpg",
+        "url": "https://www.hindustantimes.com/india-news/prashant-kishor-dares-nitish-kumar-to-remove-arrest-bihar-deputy-cm-samrat-choudhary-101759203244997.html"
+      },
+      {
+        "content": "Talks on Ladakh hit a wall as Leh body pulls out, Kargil to follow",
+        "image_path": "artifacts/images/politics_ie_politics_7.png",
+        "url": "https://indianexpress.com/article/political-pulse/apex-body-leh-protests-sonam-wangchuk-10278433/"
+      },
+      {
+        "content": "Kosi may be Bihar’s ‘sorrow’, but why it is a lifeline for JD(U), allies in polls",
+        "image_path": "artifacts/images/politics_ie_politics_8.jpg",
+        "url": "https://indianexpress.com/article/political-pulse/kosi-bihars-sorrow-why-lifeline-jdu-allies-in-polls-10278117/"
+      },
+      {
+        "content": "‘It was payday in Karur, thousands were out on streets … why weren’t TVK leaders told it wasn’t right day for a big event’: Congress MP Jothimani",
+        "image_path": "artifacts/images/politics_ie_politics_9.jpg",
+        "url": "https://indianexpress.com/article/political-pulse/payday-karur-streets-tvk-leaders-big-event-congress-mp-jothimani-10277488/"
+      }
+    ],
+    "movies": [
+      {
+        "content": "10 anime characters stronger than Dragon Ball Super’s Zeno without breaking a sweat",
+        "image_path": "artifacts/images/movies_toi_movies_0.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/anime/10-anime-characters-stronger-than-dragon-ball-supers-zeno-without-breaking-a-sweat/articleshow/121971531.cms"
+      },
+      {
+        "content": "‘The Simpsons’ new movie underway: Slated for 2027 release - Here’s what we know",
+        "image_path": "artifacts/images/movies_toi_movies_1.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/english/hollywood/news/the-simpsons-new-movie-underway-slated-for-2027-release-heres-what-we-know/articleshow/124227448.cms"
+      },
+      {
+        "content": "'Jolly LLB 3' box office collection day 11: The Akshay Kumar, Arshad Warsi starrer sees a huge drop on second Monday amidst competition from 'They Call Me OG'",
+        "image_path": "artifacts/images/movies_toi_movies_2.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/jolly-llb-3-box-office-collection-day-11-the-akshay-kumar-arshad-warsi-starrer-sees-a-huge-drop-on-second-monday-amidst-competition-from-they-call-me-og/articleshow/124223051.cms"
+      },
+      {
+        "content": "'Sunny Sanskari Ki Tulsi Kumari' advance box office: The Varun Dhawan, Janhvi Kapoor film expected to open at Rs 10-12 crore",
+        "image_path": "artifacts/images/movies_toi_movies_3.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/sunny-sanskari-ki-tulsi-kumari-advance-box-office-the-varun-dhawan-janhvi-kapoor-film-expected-to-open-at-rs-10-12-crore/articleshow/124223476.cms"
+      },
+      {
+        "content": "‘New Baba Vanga’ predicts disaster through manga: Know what will happen in Japan on July 5?",
+        "image_path": "artifacts/images/movies_toi_movies_4.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/anime/new-baba-vanga-predicts-disaster-through-manga-know-what-will-happen-in-japan-on-july-5/articleshow/121833057.cms"
+      },
+      {
+        "content": "'Kishkindhapuri' OTT release date: When and where to watch Bellamkonda Sai Sreenivas and Anupama's horror drama",
+        "image_path": "artifacts/images/movies_toi_movies_5.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/telugu/movies/news/kishkindhapuri-ott-release-date-when-and-where-to-watch-bellamkonda-sai-sreenivas-and-anupamas-horror-drama/articleshow/124227982.cms"
+      },
+      {
+        "content": "'OG' box office collections day 5: Pawan Kalyan’s actioner holds strong; nears Rs 150 crore mark",
+        "image_path": "artifacts/images/movies_toi_movies_6.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/telugu/movies/news/og-box-office-collections-day-5-pawan-kalyans-actioner-holds-strong-nears-rs-150-crore-mark/articleshow/124223284.cms"
+      },
+      {
+        "content": "'Marutham' trailer: Vidharth starrer shows plight of farmer fighting to save his ancestral land - Watch",
+        "image_path": "artifacts/images/movies_toi_movies_7.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movies/news/marutham-trailer-vidharth-starrer-shows-plight-of-farmer-fighting-to-save-his-ancestral-land-watch/articleshow/124219011.cms"
+      },
+      {
+        "content": "Shalini Pandey on her debut film 'Arjun Reddy'; says it gave her 'validation and confidence' as an actor",
+        "image_path": "artifacts/images/movies_toi_movies_8.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/telugu/movies/news/shalini-pandey-on-her-debut-film-arjun-reddy-says-it-gave-her-validation-and-confidence-as-an-actor/articleshow/124219998.cms"
+      },
+      {
+        "content": "Rishabh Shetty’s ‘Kantara: Chapter 1’ inches towards Rs 11 crore mark in advance booking in India",
+        "image_path": "artifacts/images/movies_toi_movies_9.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/rishabh-shettys-kantara-chapter-1-inches-towards-rs-11-crore-mark-in-advance-booking-in-india/articleshow/124228595.cms"
+      }
+    ],
+    "entertainment": [
+      {
+        "content": "Elderly couple's viral Garba video during Navratri shows age is just a number",
+        "image_path": "artifacts/images/entertainment_indiatoday_trending_0.jpg",
+        "url": "https://www.indiatoday.in/trending-news/story/elderly-couple-viral-garba-dance-video-during-navratri-shows-age-is-just-a-number-instagram-2795554-2025-09-30"
+      },
+      {
+        "content": "Exclusive: Rukmini Vasanth credits Rishab Shetty for shaping her Kantara journey",
+        "image_path": "artifacts/images/entertainment_indiatoday_entertainment_1.jpg",
+        "url": "https://www.indiatoday.in/movies/regional-cinema/story/exclusive-rukmini-vasanth-credits-rishab-shetty-for-shaping-her-kantara-journey-2795525-2025-09-30"
+      },
+      {
+        "content": "Bollywood's big deja vu: Same stories, new faces, zero shame",
+        "image_path": "artifacts/images/entertainment_indiatoday_entertainment_2.jpg",
+        "url": "https://www.indiatoday.in/movies/standpoint/story/bollywoods-big-deja-vu-same-stories-new-faces-zero-shame-2789507-2025-09-18"
+      },
+      {
+        "content": "Delhi man slams Uber after sister threatened by driver in shocking fare dispute",
+        "image_path": "artifacts/images/entertainment_indiatoday_trending_3.png",
+        "url": "https://www.indiatoday.in/trending-news/story/delhi-man-slams-uber-after-sister-threatened-by-driver-in-shocking-fare-dispute-2795503-2025-09-30"
+      },
+      {
+        "content": "US immigration lawyer recalls long struggle to secure K-1 visa for wife in viral post",
+        "image_path": "artifacts/images/entertainment_indiatoday_trending_4.jpg",
+        "url": "https://www.indiatoday.in/trending-news/story/us-immigration-lawyer-recalls-long-struggle-to-secure-k-1-visa-for-wife-in-viral-post-2795343-2025-09-29"
+      },
+      {
+        "content": "Viral video: Food delivery worker's daring escape as US immigration agents chase him",
+        "image_path": "artifacts/images/entertainment_indiatoday_trending_5.jpg",
+        "url": "https://www.indiatoday.in/trending-news/story/food-delivery-worker-escapes-after-immigration-agents-chase-him-viral-video-2795278-2025-09-29"
+      },
+      {
+        "content": "Uber driver records clash with woman who refused to pay Rs 300. Video goes viral",
+        "image_path": "artifacts/images/entertainment_indiatoday_trending_6.jpg",
+        "url": "https://www.indiatoday.in/trending-news/story/uber-driver-records-clash-with-woman-who-refused-to-pay-rs-300-viral-video-2795237-2025-09-29"
+      },
+      {
+        "content": "The Simpsons Movie sequel announced; check out the release date here",
+        "image_path": "artifacts/images/entertainment_indiatoday_entertainment_7.jpg",
+        "url": "https://www.indiatoday.in/movies/hollywood/story/the-simpsons-movie-sequel-release-date-here-2795623-2025-09-30"
+      },
+      {
+        "content": "Katrina's first outing after pregnancy news, joins Sunny Kaushal's birthday bash",
+        "image_path": "artifacts/images/entertainment_indiatoday_entertainment_8.jpg",
+        "url": "https://www.indiatoday.in/movies/celebrities/story/katrina-kaif-first-outing-pregnancy-news-sunny-kaushal-birthday-bash-2795590-2025-09-30"
+      },
+      {
+        "content": "They Call Him OG box office Day 5: Pawan Kalyan's action film sees slight dip",
+        "image_path": "artifacts/images/entertainment_indiatoday_entertainment_9.jpg",
+        "url": "https://www.indiatoday.in/movies/regional-cinema/story/they-call-him-og-box-office-collection-day-5-pawan-kalyan-action-entertainer-sees-slight-dip-2795496-2025-09-30"
+      }
+    ],
+    "sports": [
+      {
+        "content": "Sports/Sep 30, 2025How Asia Cup 2025 trophy presentation turned into a diplomatic standoffIndia's Asia Cup victory over Pakistan descended into controversy as the Indian team refused to accept the trophy from ACC President Mohsin Naqvi, citing his social media posts and diplomatic tensions. Naqvi, also Pakistan's interior minister, subsequently removed the trophy, leading to India celebrating without it. The incident escalated into a political spat between the two nations.",
+        "image_path": "artifacts/images/sports_toi_sports_0.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/asia-cup/how-asia-cup-2025-trophy-presentation-turned-into-a-diplomatic-standoff/articleshow/124216897.cms"
+      },
+      {
+        "content": "'Ashamed as a cricketer': World Cup-winning ex-India player slams politics, provocative gestures in Asia Cup 2025",
+        "image_path": "artifacts/images/sports_toi_sports_1.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/asia-cup/ashamed-as-a-cricketer-world-cup-winning-ex-india-player-slams-politics-provocative-gestures-in-asia-cup-2025/articleshow/124225714.cms"
+      },
+      {
+        "content": "Stick to sports: Kapil Dev opens up on India-Pakistan controversy in Asia Cup",
+        "image_path": "artifacts/images/sports_indiatoday_sports_2.jpg",
+        "url": "https://www.indiatoday.in/sports/cricket/story/kapil-dev-interview-focus-on-cricket-not-politics-after-india-pakistan-asia-cup-final-2795230-2025-09-29"
+      },
+      {
+        "content": "Sports/Sep 30, 2025Is RCB up for sale? Former IPL chief weighs in on franchise's future",
+        "image_path": "artifacts/images/sports_toi_sports_3.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/ipl/top-stories/is-rcb-up-for-sale-former-ipl-chief-lalit-modi-weighs-in-on-franchises-future/articleshow/124228582.cms"
+      },
+      {
+        "content": "Sports/Sep 30, 2025'Ran away with the trophy': Surya slams Mohsin Naqvi after Asia Cup final dramaIndia's Asia Cup 2025 triumph was overshadowed by extraordinary post-match scenes as captain Suryakumar Yadav alleged ACC chief Mohsin Naqvi ran away with the trophy. The Indian team collectively refused to accept it from Naqvi, who is also PCB chairman, leading to a chaotic presentation. BCCI confirmed it would file a formal complaint against Naqvi's actions.",
+        "image_path": "artifacts/images/sports_toi_sports_4.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/asia-cup/trophy-leke-bhaag-gaye-woh-suryakumar-yadav-slams-mohsin-naqvi-after-asia-cup-final-drama/articleshow/124225059.cms"
+      },
+      {
+        "content": "Sports/Sep 30, 2025'PCB wants lallu-kattu kids': Akhtar slams Pakistan cricket after Asia Cup loss",
+        "image_path": "artifacts/images/sports_toi_sports_5.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/asia-cup/pcb-wants-obedient-lallu-kattu-kids-shoaib-akhtar-slams-pakistan-cricket-after-asia-cup-2025-loss/articleshow/124226207.cms"
+      },
+      {
+        "content": "Giant killers! Nepal shatter multiple records with emphatic 90-run win against West Indies",
+        "image_path": "artifacts/images/sports_toi_sports_6.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/news/giant-killers-nepal-shatter-multiple-records-with-emphatic-90-run-win-against-west-indies/articleshow/124226454.cms"
+      },
+      {
+        "content": "Jaxson Dart injury update: Good news for Giants, QB's Week 5 status revealed",
+        "image_path": "artifacts/images/sports_ht_sports_7.jpg",
+        "url": "https://www.hindustantimes.com/sports/us-sports/jaxson-dart-injury-update-good-news-for-giants-qbs-week-5-status-revealed-101759202332248.html"
+      },
+      {
+        "content": "Who is Jason Taylor's wife, Monica? 'Coldplay moment' on MNF broadcast viral",
+        "image_path": "artifacts/images/sports_ht_sports_8.png",
+        "url": "https://www.hindustantimes.com/sports/us-sports/who-is-jason-taylors-wife-monica-coldplay-moment-on-dolphins-vs-jets-mnf-broadcast-goes-viral-101759199620076.html"
+      },
+      {
+        "content": "Why isn't Joe Burrow playing today? Latest on Bengals QB's turf-toe injury",
+        "image_path": "artifacts/images/sports_ht_sports_9.jpg",
+        "url": "https://www.hindustantimes.com/sports/us-sports/why-isnt-joe-burrow-playing-today-latest-on-cincinnati-bengals-qbs-turf-toe-injury-101759191960408.html"
+      }
+    ],
+    "business": [
+      {
+        "content": "‘Let Pakistan keep the trophy’: Kapil Dev on Asia Cup 2025 controversy",
+        "image_path": "artifacts/images/business_livemint_0.jpg",
+        "url": "https://www.livemint.com/sports/cricket-news/let-pakistan-cricket-team-keep-the-trophy-kapil-dev-on-asia-cup-2025-controversy-no-handshake-row-and-more-11759210400350.html"
+      },
+      {
+        "content": "Low attention span cuts mobile screens in half, split screen videos going viral",
+        "image_path": "artifacts/images/business_livemint_1.jpg",
+        "url": "https://www.livemint.com/industry/split-screen-videos-are-the-new-copyright-infringement-loophole-11759138942957.html"
+      },
+      {
+        "content": "Apar Industries, JSW Infra, Hitachi Energy stocks among top losers on Nifty Midcap 150 in today's trading",
+        "image_path": "artifacts/images/business_moneycontrol_2.jpg",
+        "url": "https://www.moneycontrol.com/news/business/stocks/apar-industries-jsw-infra-hitachi-energy-stocks-among-top-losers-on-nifty-midcap-150-in-today-s-trading-alpha-article-13590145.html"
+      },
+      {
+        "content": "Mumbai-Delhi IndiGo flight gets bomb threat, emergency declared at IGI airport",
+        "image_path": "artifacts/images/business_livemint_3.jpg",
+        "url": "https://www.livemint.com/news/india/mumbaidelhi-indigo-flight-gets-bomb-threat-emergency-declared-at-igi-airport-11759215132244.html"
+      },
+      {
+        "content": "Why AI is the real litmus test for US-India technology partnership",
+        "image_path": "artifacts/images/business_livemint_4.jpg",
+        "url": "https://www.livemint.com/opinion/online-views/us-india-ai-partnership-h-1b-visa-it-industry-disruption-policy-technology-trade-digital-sovereignty-cloud-washington-11759129848995.html"
+      },
+      {
+        "content": "Prime Exclusives",
+        "image_path": null,
+        "url": "https://economictimes.indiatimes.com/prime?source=homepage&medium=prime_exclusives_header&campaign=prime_discovery"
+      },
+      {
+        "content": "Crimes against STs up in 2023, says NCRB. How is India's crime rate calculated?",
+        "image_path": "artifacts/images/business_livemint_6.jpg",
+        "url": "https://www.livemint.com/news/india/crimes-against-scheduled-tribes-up-in-2023-says-ncrb-dependent-on-2011-census-how-is-indias-crime-rate-calculated-11759210886583.html"
+      },
+      {
+        "content": "Delhi hit by heavy rain; airlines issue travel advisories for passengers",
+        "image_path": "artifacts/images/business_livemint_7.jpg",
+        "url": "https://www.livemint.com/news/india/delhi-weather-sees-sudden-turn-rain-brings-temperatures-down-in-capital-11759211848914.html"
+      },
+      {
+        "content": "The Winner’s Curse in India’s IPO rush: Between euphoria and reality",
+        "image_path": "artifacts/images/business_livemint_8.png",
+        "url": "https://www.livemint.com/opinion/online-views/ipo-boom-india-winners-curse-11759211144933.html"
+      },
+      {
+        "content": "How Indian investors get a passport to international markets via GIFT City",
+        "image_path": "artifacts/images/business_livemint_9.jpg",
+        "url": "https://www.livemint.com/money/personal-finance/how-retail-investors-get-a-passport-to-international-markets-via-gift-city-11759205792715.html"
+      }
+    ],
+    "technology": [
+      {
+        "content": "Why wage-based H-1B is not all bad news for Indian IT",
+        "image_path": "artifacts/images/technology_et_tech_0.jpg",
+        "url": "https://economictimes.indiatimes.com/tech/information-tech/why-wage-based-h-1b-is-not-all-bad-news-for-indian-it/articleshow/124218518.cms"
+      },
+      {
+        "content": "WhatsApp adds cool new features as Arattai app hits record downloads in India",
+        "image_path": "artifacts/images/technology_indiatoday_tech_1.jpg",
+        "url": "https://www.indiatoday.in/technology/news/story/whatsapp-adds-cool-new-features-as-arattai-app-hits-record-downloads-in-india-details-here-2795599-2025-09-30"
+      },
+      {
+        "content": "Bengaluru road repair collapses in 48 hours? viral video sparks outrage",
+        "image_path": "artifacts/images/technology_ht_trending_2.jpg",
+        "url": "https://www.hindustantimes.com/cities/bengaluru-news/bengaluru-road-repair-collapses-in-48-hours-viral-video-sparks-outrage-over-gba-s-patchwork-101759198446467.html"
+      },
+      {
+        "content": "Viral 3-3-2-2 rule for cooking steak explained: Here's if it actually works",
+        "image_path": "artifacts/images/technology_ht_trending_3.jpg",
+        "url": "https://www.hindustantimes.com/trending/us/viral-3-3-2-2-rule-for-cooking-steak-explained-heres-if-it-actually-works-101759158063595.html"
+      },
+      {
+        "content": "3 ways Google aims to support the 2024 Indian General Elections",
+        "image_path": "artifacts/images/technology_toi_technology_4.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/google-gets-ready-for-elections-in-india-with-new-features-and-more/articleshow/108432040.cms"
+      },
+      {
+        "content": "Google Maps to get better with directions with future updates, here’s what’s changing",
+        "image_path": "artifacts/images/technology_toi_technology_5.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/google-maps-to-get-better-with-directions-with-future-updates-heres-whats-changing/articleshow/108392934.cms"
+      },
+      {
+        "content": "Arattai app: Is it free to use and accessible on multiple devices?",
+        "image_path": "artifacts/images/technology_indiatoday_tech_6.jpg",
+        "url": "https://www.indiatoday.in/technology/news/story/arattai-app-is-it-free-to-use-and-accessible-on-multiple-devices-2795300-2025-09-29"
+      },
+      {
+        "content": "Teen Innovator Soars to New Heights: Mehar Singh Breaks Guinness World Record with Lightning-Fast Drone Ascent",
+        "image_path": "artifacts/images/technology_toi_technology_7.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/teen-innovator-soars-to-new-heights-mehar-singh-breaks-guinness-world-record-with-lightning-fast-drone-ascent/articleshow/112866457.cms"
+      },
+      {
+        "content": "How do graphic designers convert JPG to PDF (Portable Document Format)?",
+        "image_path": "artifacts/images/technology_toi_technology_8.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/how-do-graphic-designers-convert-jpg-to-pdf-portable-document-format/articleshow/110598784.cms"
+      },
+      {
+        "content": "Samsung Galaxy A55 vs Vivo V30 Pro: How the two affordable premium Android phones compare",
+        "image_path": "artifacts/images/technology_toi_technology_9.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/samsung-galaxy-a55-vs-vivo-v30-pro-how-the-two-affordable-premium-android-phones-compare/articleshow/108555889.cms"
+      }
+    ]
+  }
+}

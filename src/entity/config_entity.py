@@ -59,11 +59,24 @@ class ConfigEntity:
         self.emotions_table = EMOTIONS_TABLE
         self.memes_table = MEMES_TABLE
         self.similarity_threshold = SIMILARITY_THRESHOLD
+        self.supabase_image_base_url = SUPABASE_IMAGE_BASE_URL  # ADD THIS LINE
         
         # Content processing
         self.duplicate_content_hash_length = DUPLICATE_CONTENT_HASH_LENGTH
         self.max_content_parts = MAX_CONTENT_PARTS
         self.max_content_length = MAX_CONTENT_LENGTH
+        
+        # Meme Generation
+        self.meme_template_width = MEME_TEMPLATE_WIDTH
+        self.meme_template_height = MEME_TEMPLATE_HEIGHT
+        self.meme_max_font_size = MEME_MAX_FONT_SIZE
+        self.meme_min_font_size = MEME_MIN_FONT_SIZE
+        self.meme_text_padding = MEME_TEXT_PADDING
+        self.meme_outline_width = MEME_OUTLINE_WIDTH
+        self.meme_line_spacing = MEME_LINE_SPACING
+        self.font_paths = FONT_PATHS
+        self.meme_text_color = MEME_TEXT_COLOR
+        self.meme_outline_color = MEME_OUTLINE_COLOR
 
 class NewsExtractorConfig:
     def __init__(self, config: ConfigEntity):
@@ -118,6 +131,7 @@ class TemplateManagerConfig:
         self.emotions_table = config.emotions_table
         self.memes_table = config.memes_table
         self.similarity_threshold = config.similarity_threshold
+        self.supabase_image_base_url = config.supabase_image_base_url  # ADD THIS LINE
 
 class OutputManagerConfig:
     def __init__(self, config: ConfigEntity):
@@ -126,3 +140,16 @@ class OutputManagerConfig:
         self.processed_memes_prefix = config.processed_memes_prefix
         self.json_extension = config.json_extension
         self.target_categories = config.target_categories
+
+class MemeGeneratorConfig:
+    def __init__(self, config: ConfigEntity):
+        self.template_width = config.meme_template_width
+        self.template_height = config.meme_template_height
+        self.max_font_size = config.meme_max_font_size
+        self.min_font_size = config.meme_min_font_size
+        self.text_padding = config.meme_text_padding
+        self.outline_width = config.meme_outline_width
+        self.line_spacing = config.meme_line_spacing
+        self.font_paths = config.font_paths
+        self.text_color = config.meme_text_color
+        self.outline_color = config.meme_outline_color

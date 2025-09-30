@@ -1,8 +1,9 @@
 import os
+import requests
 from pathlib import Path
 from bs4 import BeautifulSoup
 import sys
-from typing import List, Dict, Set
+from typing import List, Dict, Set, Optional
 from src.entity.artifacts import ImageDownloaderArtifact
 from src.entity.config_entity import ImageDownloaderConfig, ConfigEntity
 from src.logger import logging
@@ -27,55 +28,61 @@ class ImageDownloader:
             logging.error(f"Error creating images directory: {str(e)}")
             raise CustomException(e, sys)
 
-    def extract_image_from_article(self, article: Dict) -> str:
-        """Extract image URL from article content or source"""
+    def extract_image_from_article_page(self, article_url: str) -> Optional[str]:
+        """Extract image directly from the article page"""
         try:
-            # Try to extract from the article's listing content
-            if 'listing_element' in article:
-                return self.extract_image_from_listing(article['listing_element'], article['url'])
+            headers = self.config.default_headers.copy()
+            headers['User-Agent'] = get_random_user_agent()
             
-            # If no listing element, try to find images in the content
+            response = requests.get(article_url, headers=headers, timeout=self.config.request_timeout)
+            if response.status_code != 200:
+                logging.warning(f"Failed to fetch article page: {article_url}")
+                return None
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Try multiple selectors for different news sites
+            image_selectors = [
+                'meta[property="og:image"]',  # Open Graph image
+                'meta[name="twitter:image"]',  # Twitter card image
+                '.story-image img',  # Common story image
+                '.article-image img',  # Article image
+                'figure img',  # Figure images
+                '.img-responsive',  # Bootstrap responsive images
+                'img[src*="articleshow"]',  # TOI specific
+                'img[src*="images.indianexpress"]',  # IE specific
+                'img[src*="hindustantimes"]'  # HT specific
+            ]
+            
+            for selector in image_selectors:
+                elements = soup.select(selector)
+                for element in elements:
+                    if selector.startswith('meta'):
+                        img_url = element.get('content')
+                    else:
+                        img_url = get_image_url_from_element(element)
+                    
+                    if img_url and is_valid_image_url(img_url, self.config.skip_image_patterns):
+                        normalized_url = normalize_image_url(img_url, article_url)
+                        if normalized_url:
+                            logging.info(f"Found image via {selector}: {normalized_url}")
+                            return normalized_url
+            
+            logging.warning(f"No suitable image found for: {article_url}")
             return None
             
         except Exception as e:
-            logging.warning(f"Error extracting image from article: {str(e)}")
+            logging.error(f"Error extracting image from article page {article_url}: {str(e)}")
             return None
 
-    def extract_image_from_listing(self, link_element, base_url: str) -> str:
-        """Extract image from article listing element"""
-        try:
-            # Look for images in the headline container
-            headline_container = link_element.parent
-            if headline_container:
-                container_images = headline_container.select('img')
-                for img in container_images:
-                    img_url = get_image_url_from_element(img)
-                    if img_url and is_valid_image_url(img_url, self.config.skip_image_patterns):
-                        normalized_url = normalize_image_url(img_url, base_url)
-                        if normalized_url:
-                            return normalized_url
-            
-            # Look in parent container if not found
-            if headline_container and headline_container.parent:
-                parent_images = headline_container.parent.select('img')
-                for img in parent_images:
-                    img_url = get_image_url_from_element(img)
-                    if img_url and is_valid_image_url(img_url, self.config.skip_image_patterns):
-                        normalized_url = normalize_image_url(img_url, base_url)
-                        if normalized_url:
-                            return normalized_url
-            
-            return None
-            
-        except Exception as e:
-            logging.warning(f"Error extracting image from listing: {str(e)}")
-            return None
-
-    def download_article_image(self, article: Dict, index: int) -> str:
+    def download_article_image(self, article: Dict, index: int) -> Optional[str]:
         """Download image for a specific article"""
         try:
-            image_url = self.extract_image_from_article(article)
+            # Extract image from the actual article page
+            image_url = self.extract_image_from_article_page(article['url'])
+            
             if not image_url:
+                logging.warning(f"No image found for article: {article['url']}")
                 return None
             
             # Create filename
@@ -149,3 +156,4 @@ class ImageDownloader:
         except Exception as e:
             logging.error(f"Error in download_images_for_articles: {str(e)}")
             raise CustomException(e, sys)
+

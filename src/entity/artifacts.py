@@ -48,3 +48,12 @@ class OutputManagerArtifact:
     total_articles_saved: int
     file_size_bytes: int
     timestamp: str
+    
+@dataclass
+class MemeGeneratorArtifact:
+    generated_memes_count: int
+    failed_memes_count: int
+    total_processing_time: float
+    success_rate: float
+    average_generation_time: float
+

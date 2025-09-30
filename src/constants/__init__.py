@@ -1,6 +1,7 @@
 # Constants for News Meme Generation Pipeline
 
 import random
+import os
 
 # Directory structure
 OUTPUT_DIR = "artifacts"
@@ -39,31 +40,35 @@ DEFAULT_HEADERS = {
 
 # News sources configuration
 NEWS_SOURCES = {
-    # Politics sources
+    # POLITICS SOURCES - Top 3
     'ie_politics': {'url': 'https://indianexpress.com/section/political-pulse/', 'selectors': ['h3 a', 'h2 a'], 'category': 'politics'},
     'toi_politics': {'url': 'https://timesofindia.indiatimes.com/india', 'selectors': ['a[href*="/articleshow/"]', 'h3 a'], 'category': 'politics'},
     'ht_politics': {'url': 'https://www.hindustantimes.com/india-news', 'selectors': ['h3 a', 'h2 a'], 'category': 'politics'},
-    
-    # Entertainment & movies sources
-    'toi_entertainment': {'url': 'https://timesofindia.indiatimes.com/entertainment', 'selectors': ['a[href*="/articleshow/"]', 'h3 a'], 'category': 'entertainment'},
-    'toi_movies': {'url': 'https://timesofindia.indiatimes.com/entertainment/bollywood', 'selectors': ['a[href*="/articleshow/"]', 'h3 a'], 'category': 'movies'},
+
+    # ENTERTAINMENT & MOVIES SOURCES - Top 3
+    'toi_movies': {'url': 'https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news', 'selectors': ['a[href*="/articleshow/"]', 'h3 a'], 'category': 'movies'},
     'news18_entertainment': {'url': 'https://www.news18.com/entertainment/', 'selectors': ['h3 a', 'h2 a'], 'category': 'entertainment'},
-    'ie_entertainment': {'url': 'https://indianexpress.com/section/entertainment/', 'selectors': ['h3 a', 'h2 a'], 'category': 'entertainment'},
-    
-    # Sports sources
+    'indiatoday_entertainment': {'url': 'https://www.indiatoday.in/movies', 'selectors': ['h2 a', 'h3 a'], 'category': 'entertainment'},
+
+    # SPORTS SOURCES - Top 3
     'toi_sports': {'url': 'https://timesofindia.indiatimes.com/sports', 'selectors': ['a[href*="/articleshow/"]', 'h3 a'], 'category': 'sports'},
     'ht_sports': {'url': 'https://www.hindustantimes.com/sports', 'selectors': ['h3 a', 'h2 a'], 'category': 'sports'},
-    'ie_sports': {'url': 'https://indianexpress.com/section/sports/', 'selectors': ['h3 a', 'h2 a'], 'category': 'sports'},
-    
-    # Business sources
+    'indiatoday_sports': {'url': 'https://www.indiatoday.in/sports', 'selectors': ['h2 a', 'h3 a'], 'category': 'sports'},
+
+    # BUSINESS SOURCES - Top 3
     'economic_times': {'url': 'https://economictimes.indiatimes.com/', 'selectors': ['h3 a', 'h2 a'], 'category': 'business'},
     'livemint': {'url': 'https://www.livemint.com/', 'selectors': ['h3 a', 'h2 a'], 'category': 'business'},
     'moneycontrol': {'url': 'https://www.moneycontrol.com/news/', 'selectors': ['h3 a', 'h2 a'], 'category': 'business'},
-    
-    # Technology sources
+
+    # TECHNOLOGY SOURCES - Top 3
     'toi_technology': {'url': 'https://timesofindia.indiatimes.com/gadgets-news', 'selectors': ['a[href*="/articleshow/"]', 'h3 a'], 'category': 'technology'},
     'et_tech': {'url': 'https://economictimes.indiatimes.com/tech', 'selectors': ['h3 a', 'h2 a'], 'category': 'technology'},
-    'ht_tech': {'url': 'https://www.hindustantimes.com/tech', 'selectors': ['h3 a', 'h2 a'], 'category': 'technology'},
+    'indiatoday_tech': {'url': 'https://www.indiatoday.in/technology/news', 'selectors': ['h2 a', 'h3 a'], 'category': 'technology'},
+
+    # TRENDING / VIRAL SOURCES - Top 3
+    'ht_trending': {'url': 'https://www.hindustantimes.com/trending', 'selectors': ['h3 a', 'h2 a'], 'category': 'trending'},
+    'indianexpress_trending': {'url': 'https://indianexpress.com/section/trending/', 'selectors': ['h3 a', 'h2 a'], 'category': 'trending'},
+    'indiatoday_trending': {'url': 'https://www.indiatoday.in/trending-news', 'selectors': ['h2 a', 'h3 a'], 'category': 'trending'},
 }
 
 # Buzz score keywords
@@ -111,14 +116,84 @@ MAX_BUZZ_SCORE = 15
 CONTENT_LENGTH_BONUS_THRESHOLD_1 = 50
 CONTENT_LENGTH_BONUS_THRESHOLD_2 = 150
 TITLE_LENGTH_BONUS_THRESHOLD = 30
-
+ 
 # Supabase configuration
 SUPABASE_SCHEMA = 'dc'
 EMOTIONS_TABLE = 'emotions'
 MEMES_TABLE = 'memes_dc'
 SIMILARITY_THRESHOLD = 0.5
+SUPABASE_IMAGE_BASE_URL = os.getenv('SUPABASE_IMAGE_BASE_URL', '') 
 
 # Content processing thresholds
 DUPLICATE_CONTENT_HASH_LENGTH = 32
 MAX_CONTENT_PARTS = 3
 MAX_CONTENT_LENGTH = 800
+
+GEMINI_COMPREHENSIVE_PROMPT = """
+You are a creative content generator who makes VIRAL meme content.
+
+NEWS CONTENT: "{news_content}"
+
+Generate ALL the following in JSON format:
+
+1. DESCRIPTION: Write a **short, clear, and interesting summary** of the news.  
+   - Length: 2–3 lines (maximum 3).  
+   - Tone: Informative, neutral, engaging (NO sarcasm, NO buzzwords).  
+   - Language: English only.  
+   - Should feel like a simple news description people can instantly get.  
+
+2. EMOTION: Pick the dominant emotion from these options:
+{emotion_options}  
+   Return ONLY the emotion label in lowercase.
+
+3. CATEGORY: Categorize into ONE: politics, entertainment, movies, sports, business, technology, crime
+
+4. DIALOGUES: Create exactly 2 **single-line dialogues** in **Tnglish**.  
+
+   CRITICAL DIALOGUE RULES:  
+   - Dialogue 1: Based directly on the description, but phrased to spark meme interest (setup line).  
+   - Dialogue 2: A sarcastic, buzzy punchline response to Dialogue 1.  
+   - Each dialogue must be a **single line** only (no `\\n`, no line breaks).  
+   - Each dialogue must be **less than 10 words**.  
+   - Language: Tnglish only.  
+   - Must feel natural, conversational, and instantly meme-worthy.  
+
+   Example pattern:  
+   - Dialogue 1: "Bro petrol price malli perigindi ra"  
+   - Dialogue 2: "Mana bike kante cycle lo mileage ekkuva ra"  
+
+5. HASHTAGS: Generate 6–8 TRENDING viral hashtags  
+   - Mix Tnglish + English style hashtags  
+   - Should fit meme culture + the news context  
+
+RETURN EVERYTHING in this EXACT JSON structure:
+{{
+    "description": "Clear 2-3 line informative description",
+    "emotion": "emotion_label",
+    "category": "category_name", 
+    "dialogues": [
+        "Dialogue 1 single-line in Tnglish", 
+        "Dialogue 2 single-line sarcastic punchline in Tnglish"
+    ],
+    "hashtags": ["#TnglishViral", "#Trending", "#CategoryTag", "#MemeBuzz"]
+}}
+"""
+# Meme Generation Constants
+MEME_TEMPLATE_WIDTH = 500
+MEME_TEMPLATE_HEIGHT = 500
+MEME_MAX_FONT_SIZE = 40
+MEME_MIN_FONT_SIZE = 16
+MEME_TEXT_PADDING = 20
+MEME_OUTLINE_WIDTH = 2
+MEME_LINE_SPACING = 5
+
+# Font paths for different operating systems
+FONT_PATHS = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",  # Linux
+    "/System/Library/Fonts/Helvetica.ttc",  # macOS
+    "C:\\Windows\\Fonts\\arial.ttf",  # Windows
+]
+
+# Meme colors
+MEME_TEXT_COLOR = "white"
+MEME_OUTLINE_COLOR = "black"

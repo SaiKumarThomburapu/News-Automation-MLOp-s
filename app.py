@@ -18,17 +18,23 @@ from datetime import datetime
 # Load environment variables
 load_dotenv()
 
-from src.pipeline.news_pipeline import NewsPipeline
+# Import only the main pipeline function
+from src.pipeline.unified_news_pipeline import execute_complete_pipeline
 
 app = FastAPI(
-    title="News Meme Pipeline API", 
-    description="Single endpoint for complete news scraping and AI meme processing",
-    version="2.0.0"
+    title="News Meme AI Processing API", 
+    description="Single endpoint for complete news scraping and AI meme processing pipeline",
+    version="3.0.0"
 )
 
-# Initialize pipeline on startup
+# Global variables for pipeline configuration
+supabase_client = None
+gemini_api_keys = []
+
 def initialize_pipeline():
-    """Initialize the complete pipeline"""
+    """Initialize the pipeline configuration"""
+    global supabase_client, gemini_api_keys
+    
     try:
         # Check environment variables
         supabase_url = os.getenv('SUPABASE_URL')
@@ -40,70 +46,106 @@ def initialize_pipeline():
         # Initialize Supabase
         supabase_client = create_client(supabase_url, supabase_key)
         
+        # Configure client to use dc schema with headers
+        supabase_client.postgrest.session.headers.update({'Accept-Profile': 'dc'})
+        
+        print(" SUCCESS: Configured Supabase client to use 'dc' schema with headers")
+        
+        # Verify schema access works
+        try:
+            emotions_result = supabase_client.table('emotions').select('*').limit(1).execute()
+            memes_result = supabase_client.table('memes_dc').select('*').limit(1).execute()
+            
+            print(f" SUCCESS: emotions table accessible - {len(emotions_result.data)} records")
+            print(f" SUCCESS: memes_dc table accessible - {len(memes_result.data)} records")
+            
+            if emotions_result.data:
+                sample = emotions_result.data[0]
+                print(f" Sample emotion: {sample.get('emotion_label', 'NO_LABEL')}")
+            
+            if memes_result.data:
+                sample_meme = memes_result.data[0]
+                print(f" Sample meme: {sample_meme.get('meme_id', 'NO_ID')[:10]}...")
+            
+        except Exception as verify_e:
+            print(f" Schema verification failed: {str(verify_e)}")
+            raise Exception(f"Schema access verification failed: {str(verify_e)}")
+        
         # Get Gemini API keys
-        gemini_api_keys = [
+        api_keys = [
             os.getenv('GEMINI_API_KEY_1'),
             os.getenv('GEMINI_API_KEY_2'),
             os.getenv('GEMINI_API_KEY_3'),
             os.getenv('GEMINI_API_KEY_4')
         ]
         
-        valid_api_keys = [key for key in gemini_api_keys if key]
+        gemini_api_keys = [key for key in api_keys if key]
         
-        if not valid_api_keys:
+        if not gemini_api_keys:
             raise Exception("No GEMINI_API_KEY found in .env file")
         
-        # Initialize pipeline
-        pipeline = NewsPipeline(valid_api_keys, supabase_client)
+        print(" Pipeline configuration initialized successfully!")
+        print(f"   - Supabase: Connected to 'dc' schema")
+        print(f"   - Gemini API Keys: {len(gemini_api_keys)} available")
         
-        print("✅ Pipeline initialized successfully!")
-        print(f"   - Supabase: Connected")
-        print(f"   - Gemini API Keys: {len(valid_api_keys)} available")
-        
-        return pipeline
+        return True
         
     except Exception as e:
-        print(f"❌ Pipeline initialization failed: {str(e)}")
-        return None
+        print(f" Pipeline initialization failed: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return False
 
-# Initialize pipeline
-news_pipeline = initialize_pipeline()
+# Initialize pipeline configuration
+pipeline_ready = initialize_pipeline()
 
 @app.get("/")
 def root():
     """Root endpoint with API information"""
     return {
-        "api": "News Meme Pipeline",
-        "version": "2.0.0",
+        "api": "News Meme AI Processing API",
+        "version": "3.0.0",
         "description": "Complete MLOps pipeline for news scraping and AI meme generation",
-        "status": "Ready" if news_pipeline else "Not initialized",
-        "main_endpoint": "/process-news",
+        "status": "Ready" if pipeline_ready else "Not initialized",
+        "endpoint": "/process",
         "features": [
-            "Scrapes categorized news (6 categories, 10 articles each)",
+            "Scrapes categorized news from multiple sources",
             "Downloads associated images",
-            "Processes with AI for sarcastic content",
-            "Matches emotion-based meme templates",
-            "Returns comprehensive JSON output"
+            "Processes articles with AI for sarcastic content",
+            "Matches emotion-based meme templates from dc schema",
+            "Downloads templates from Supabase storage",
+            "Overlays dialogues on templates with dynamic font sizing",
+            "Returns final memes as base64 in JSON"
         ],
-        "categories": ["politics", "movies", "entertainment", "sports", "business", "technology"]
+        "categories": ["politics", "movies", "entertainment", "sports", "business", "technology"],
+        "supabase_schema": "dc",
+        "architecture": "Pure functional approach"
     }
 
-@app.get("/process-news")
-def complete_news_pipeline():
+@app.get("/process")
+def process_complete_pipeline():
     """
-    🚀 COMPLETE PIPELINE ENDPOINT 
+    COMPLETE News Meme Generation Pipeline
     
-    Executes the full MLOps news meme generation pipeline:
-    1. Scrapes news from multiple sources (categorized)
+    This single endpoint executes the entire end-to-end pipeline:
+    
+    PHASE 1 - NEWS SCRAPING:
+    1. Scrapes categorized news from multiple Indian sources
     2. Processes and ranks articles by buzz score
     3. Downloads associated images
-    4. Processes articles with Gemini AI for sarcastic content
-    5. Matches emotion-based meme templates
-    6. Generates comprehensive output files
+    4. Saves clean categorized news data
     
-    Returns complete pipeline results with all generated data.
+    PHASE 2 - AI PROCESSING & MEME GENERATION:
+    5. Processes articles with Gemini AI for emotion detection and sarcastic dialogues
+    6. Matches emotion-based meme templates from Supabase dc schema
+    7. Downloads templates from Supabase storage
+    8. Overlays dialogues on templates with dynamic font sizing
+    9. Generates final memes as base64 in JSON output
+    10. Saves complete processed memes data
+    
+    Returns comprehensive pipeline results with detailed statistics.
     """
-    if not news_pipeline:
+    if not pipeline_ready:
         raise HTTPException(
             status_code=503,
             detail={
@@ -115,24 +157,26 @@ def complete_news_pipeline():
     
     try:
         print("\n" + "="*80)
-        print("🚀 STARTING COMPLETE NEWS MEME PIPELINE")
+        print(" STARTING COMPLETE NEWS MEME GENERATION PIPELINE")
         print("="*80)
         
-        # Execute complete pipeline
-        result = news_pipeline.execute_complete_pipeline()
+        # Execute the complete pipeline - does everything internally:
+        # - scrape_and_process_news() 
+        # - process_with_ai()
+        # - All saving and processing steps
+        result = execute_complete_pipeline(gemini_api_keys, supabase_client)
         
-        print("✅ PIPELINE COMPLETED SUCCESSFULLY!")
+        print(" COMPLETE PIPELINE FINISHED SUCCESSFULLY!")
         print("="*80 + "\n")
         
         return JSONResponse(content=result)
         
     except Exception as e:
-        # Clean error message
         clean_error = str(e)
         if "ALTS creds ignored" in clean_error:
             clean_error = clean_error.replace("ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.", "").strip()
         
-        print(f"❌ Pipeline execution failed: {clean_error}")
+        print(f" Pipeline execution failed: {clean_error}")
         
         raise HTTPException(
             status_code=500,
@@ -148,26 +192,39 @@ if __name__ == "__main__":
     import uvicorn
     
     print("="*80)
-    print("🎯 News Meme Pipeline API - Single Endpoint")
+    print(" News Meme AI Processing API - Complete Pipeline")
     print("="*80)
     
-    if news_pipeline:
-        print("✅ Pipeline Ready!")
-        print("🚀 Visit: http://localhost:8000/process-news")
-        print("\nPipeline Features:")
-        print("  ⚡ Scrapes 60 categorized news articles")
-        print("  🖼️  Downloads associated images")
-        print("  🤖 AI-powered sarcastic content generation")
-        print("  😊 Emotion-based meme template matching")
-        print("  📊 Comprehensive JSON output")
+    if pipeline_ready:
+        print(" Pipeline Ready!")
+        print(" Single Endpoint: http://localhost:8000/process")
+        print(" API Info: http://localhost:8000/")
+        print("\n Complete Pipeline Process:")
+        print("   Phase 1: News Scraping & Image Download")
+        print("   Phase 2: AI Processing & Meme Generation")
+        print("   Saves all data and generates final memes as base64")
+        print("\n Features:")
+        print("  Pure functional architecture")
+        print("  Scrapes 60+ categorized news articles")
+        print("  AI-powered sarcastic content generation")
+        print("  Emotion-based template matching")
+        print("  Dynamic dialogue overlay with font sizing")
+        print("  Final memes returned as base64 in JSON")
     else:
-        print("⚠️  Pipeline initialization failed")
+        print("Pipeline initialization failed")
         print("   Check your .env file configuration")
         print("   API will still start for debugging")
     
     print("="*80)
-    print("Starting server on http://localhost:8000")
+    print(" Starting server on http://localhost:8000")
     print("="*80)
     
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+
+
+
+
+
 

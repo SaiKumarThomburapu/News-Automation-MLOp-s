@@ -11,6 +11,7 @@ from src.entity.config_entity import GeminiProcessorConfig, ConfigEntity
 from src.logger import logging
 from src.exceptions import CustomException
 from src.utils.api_utils import APIKeyRotator, apply_rate_limiting
+from src.constants import GEMINI_COMPREHENSIVE_PROMPT
 
 # Suppress Google Cloud warnings
 os.environ['GRPC_VERBOSITY'] = 'ERROR'
@@ -35,57 +36,13 @@ class GeminiProcessor:
         logging.info(f"GeminiProcessor initialized with {len(valid_api_keys)} API keys")
 
     def create_comprehensive_prompt(self, news_content: str, emotions_list: List[str]) -> str:
-        """Create comprehensive prompt for Gemini API"""
+        """Create comprehensive prompt using template from constants"""
         emotion_options = '\n'.join([f"- {emotion}" for emotion in emotions_list])
         
-        prompt = f"""
-You are a sarcastic, witty social media content creator and news analyst. Process this news article and provide ALL the following information in a single response:
-
-NEWS CONTENT: "{news_content}"
-
-Provide ALL the following in JSON format:
-
-1. DESCRIPTION: Create a SARCASTIC, BUZZY 2-3 line description
-   - Make it viral-worthy and engaging
-   - Use sarcastic tone and witty commentary
-   - No emojis, just pure sarcastic wit
-   - Maximum 3 lines that people would want to share
-   - Think like a roast comedian analyzing news
-
-2. EMOTION: After reading your sarcastic description, identify the dominant emotion from these options:
-{emotion_options}
-   Return ONLY the emotion label in lowercase.
-
-3. CATEGORY: Based on your description, categorize into ONE from: politics, entertainment, movies, sports, business, technology, crime
-   - Read your own description first, then categorize
-   - If about films/cinema/actors/bollywood → "movies"
-   - If about TV/music/celebrities/awards → "entertainment"
-   - If about police/arrest/murder/fraud/court → "crime"
-   - If about government/elections/politicians → "politics"
-
-4. DIALOGUES: Create 2 SARCASTIC meme dialogues (max 8 words each)
-   - Use formats: "When...", "Me:", "POV:", "Everyone:", "Meanwhile:"
-   - Make them hilariously sarcastic and relatable
-   - Each dialogue MUST be maximum 8 words
-   - Think like a meme creator roasting the situation
-
-5. HASHTAGS: Generate 6-8 sarcastic/buzzy hashtags
-   - Mix trending tags with sarcastic ones
-   - Include category-specific tags
-   - Make them shareable and viral-worthy
-
-RETURN EVERYTHING in this EXACT JSON structure:
-{{
-    "description": "Sarcastic line 1\\nSarcastic line 2\\nSarcastic line 3 (if needed)",
-    "emotion": "emotion_label",
-    "category": "category_name", 
-    "dialogues": ["sarcastic dialogue 1 (max 8 words)", "sarcastic dialogue 2 (max 8 words)"],
-    "hashtags": ["#SarcasticTag1", "#BuzzyTag2", "#CategoryTag", "#Trending", "#ViralTag", "#SarcasmLevel100"]
-}}
-
-Analyze and create sarcastic content for this news:
-"""
-        return prompt
+        return GEMINI_COMPREHENSIVE_PROMPT.format(
+            news_content=news_content,
+            emotion_options=emotion_options
+        )
 
     def safe_gemini_call(self, prompt: str) -> str:
         """Make Gemini API call with proper key rotation and error handling"""
@@ -127,8 +84,51 @@ Analyze and create sarcastic content for this news:
                     clean_error = error_msg.replace("ALTS creds ignored. Not running on GCP and untrusted ALTS is not enabled.", "").strip()
                     raise CustomException(f"All API attempts failed: {clean_error}", sys)
 
+    def validate_and_fix_dialogues(self, dialogues: List[str]) -> List[str]:
+        """Validate and fix dialogue format to ensure they meet requirements"""
+        fixed_dialogues = []
+        
+        for dialogue in dialogues[:2]:  # Only take first 2 dialogues
+            if isinstance(dialogue, str):
+                # Split by newline to get lines
+                lines = dialogue.split('\\n')
+                if len(lines) < 2:
+                    lines = dialogue.split('\n')  # Try actual newline
+                
+                # Ensure we have exactly 2 lines
+                if len(lines) >= 2:
+                    line1 = ' '.join(lines[0].strip().split()[:8])  # Max 8 words
+                    line2 = ' '.join(lines[1].strip().split()[:8])  # Max 8 words
+                    
+                    if line1 and line2:  # Both lines have content
+                        fixed_dialogues.append(f"{line1}\\n{line2}")
+                    else:
+                        # Generate fallback if lines are empty
+                        fixed_dialogues.append("This news is so predictable\\nEveryone saw it coming already")
+                else:
+                    # Single line dialogue - split into two parts
+                    words = dialogue.strip().split()
+                    if len(words) >= 4:
+                        mid = len(words) // 2
+                        line1 = ' '.join(words[:mid][:8])
+                        line2 = ' '.join(words[mid:][:8])
+                        fixed_dialogues.append(f"{line1}\\n{line2}")
+                    else:
+                        # Too short, create fallback
+                        fixed_dialogues.append("News like this be like\\nAbsolutely nobody is surprised today")
+        
+        # Ensure we have exactly 2 dialogues
+        while len(fixed_dialogues) < 2:
+            fallback_dialogues = [
+                "When news tries to shock us\\nBut we already knew everything",
+                "Everyone after reading this news\\nNot surprised at all honestly"
+            ]
+            fixed_dialogues.append(fallback_dialogues[len(fixed_dialogues)])
+        
+        return fixed_dialogues[:2]
+
     def parse_gemini_response(self, response: str) -> Optional[Dict]:
-        """Parse JSON response from Gemini"""
+        """Parse JSON response from Gemini with proper dialogue validation"""
         try:
             # Try to extract JSON from response
             json_pattern = r'\{.*?\}'
@@ -140,16 +140,9 @@ Analyze and create sarcastic content for this news:
                 
                 required_fields = ['description', 'emotion', 'category', 'dialogues', 'hashtags']
                 if all(key in parsed for key in required_fields):
-                    # Ensure dialogues are max 8 words each
+                    # Validate and fix dialogues
                     if 'dialogues' in parsed and isinstance(parsed['dialogues'], list):
-                        cleaned_dialogues = []
-                        for dialogue in parsed['dialogues'][:2]:
-                            words = str(dialogue).split()
-                            if len(words) <= 8:
-                                cleaned_dialogues.append(' '.join(words))
-                            else:
-                                cleaned_dialogues.append(' '.join(words[:8]))
-                        parsed['dialogues'] = cleaned_dialogues
+                        parsed['dialogues'] = self.validate_and_fix_dialogues(parsed['dialogues'])
                     
                     logging.info("Successfully parsed Gemini response")
                     return parsed
@@ -180,7 +173,7 @@ Analyze and create sarcastic content for this news:
                     break
             
             if 'description' not in result:
-                result['description'] = "Another predictable news story that surprises absolutely no one\nBecause apparently this passes for journalism these days\nStay tuned for more earth-shattering updates"
+                result['description'] = "Another predictable news story that surprises nobody\\nBecause apparently this passes for journalism\\nEveryone already knew this was coming"
             
             # Extract emotion
             emotion_match = re.search(r'"?emotion"?\s*:\s*"?(\w+)"?', response, re.IGNORECASE)
@@ -190,14 +183,31 @@ Analyze and create sarcastic content for this news:
             category_match = re.search(r'"?category"?\s*:\s*"?(\w+)"?', response, re.IGNORECASE)
             result['category'] = category_match.group(1) if category_match else 'entertainment'
             
-            # Extract dialogues
-            dialogues = re.findall(r'"([^"]+)"', response)
-            sarcastic_candidates = [d for d in dialogues if 2 <= len(d.split()) <= 10]
-            result['dialogues'] = sarcastic_candidates[:2] if len(sarcastic_candidates) >= 2 else ["When news tries to surprise us", "Everyone: Been there done that"]
+            # Generate natural fallback dialogues based on content
+            fallback_dialogues = [
+                "When news tries to surprise us\\nBut everybody already knew this",
+                "Me after reading this news\\nAbsolutely zero shock value here"
+            ]
+            
+            # Try to extract dialogues from response
+            dialogue_quotes = re.findall(r'"([^"]+)"', response)
+            good_dialogues = []
+            
+            for quote in dialogue_quotes:
+                if 6 <= len(quote.split()) <= 16:  # Good length for 2-line dialogue
+                    good_dialogues.append(quote)
+            
+            if len(good_dialogues) >= 2:
+                result['dialogues'] = self.validate_and_fix_dialogues(good_dialogues[:2])
+            else:
+                result['dialogues'] = fallback_dialogues
             
             # Extract hashtags
             hashtags = re.findall(r'#\w+', response)
-            result['hashtags'] = hashtags[:6] if hashtags else ["#Sarcasm", "#News", "#Reality", "#NoSurprise", "#Trending", "#Buzzy"]
+            if len(hashtags) >= 4:
+                result['hashtags'] = hashtags[:8]
+            else:
+                result['hashtags'] = ["#SavageNews", "#MemeWorthy", "#ViralContent", "#Sarcasm", "#Buzzy", "#Trending"]
             
             return result
             
@@ -210,8 +220,9 @@ Analyze and create sarcastic content for this news:
         try:
             content = article.get('content', '')
             url = article.get('url', '')
+            image_path = article.get('image_path')
             
-            # Create comprehensive prompt
+            # Create comprehensive prompt using constants
             prompt = self.create_comprehensive_prompt(content, emotions_list)
             
             # Make API call
@@ -219,16 +230,16 @@ Analyze and create sarcastic content for this news:
             parsed_data = self.parse_gemini_response(response)
             
             if parsed_data:
-                # Create final result with all requested fields
+                # Create final result with only required fields
                 result = {
-                    "content": content,
-                    "description": parsed_data.get('description', ''),
                     "category": parsed_data.get('category', 'entertainment'),
-                    "emotion": parsed_data.get('emotion', '').lower(),
-                    "hashtags": parsed_data.get('hashtags', []),
+                    "description": parsed_data.get('description', ''),
+                    "template_path": None,  # Will be filled by template manager
+                    "image_path": image_path,
                     "dialogues": parsed_data.get('dialogues', []),
+                    "hashtags": parsed_data.get('hashtags', []),
                     "url": url,
-                    "image_path": article.get('image_path')
+                    "emotion": parsed_data.get('emotion', '').lower()  # Needed for template matching
                 }
                 
                 return result
@@ -265,6 +276,9 @@ Analyze and create sarcastic content for this news:
                     if result:
                         processed_content.append(result)
                         logging.info(f"SUCCESS! Article {i} processed")
+                        # Log sample dialogue for verification
+                        if result.get('dialogues'):
+                            logging.info(f"  Sample dialogue: {result['dialogues'][0]}")
                     else:
                         failed_articles.append(article.get('url', f'article_{i}'))
                         logging.warning(f"FAILED to process article {i}")
@@ -294,3 +308,5 @@ Analyze and create sarcastic content for this news:
         except Exception as e:
             logging.error(f"Error in process_articles: {str(e)}")
             raise CustomException(e, sys)
+
+
