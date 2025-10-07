@@ -52,7 +52,7 @@ def scrape_and_process_news() -> Dict:
         logging.error(f"Error in scrape_and_process_news: {str(e)}")
         raise CustomException(e, sys)
 
-def process_with_ai(categorized_news: Dict[str, List[Dict]], gemini_api_keys: List[str], supabase_client: Client) -> Dict:
+def process_with_ai(categorized_news: Dict[str, List[Dict]], gemini_api_keys: str, supabase_client: Client) -> Dict:
     """Process articles with AI and match templates"""
     try:
         # Initialize components for this function
@@ -124,7 +124,7 @@ def process_with_ai(categorized_news: Dict[str, List[Dict]], gemini_api_keys: Li
         logging.error(f"Error in process_with_ai: {str(e)}")
         raise CustomException(e, sys)
 
-def execute_complete_pipeline(gemini_api_keys: List[str], supabase_client: Client) -> Dict:
+def execute_complete_pipeline(gemini_api_key: str, supabase_client: Client) -> Dict:
     """Execute the complete news meme generation pipeline"""
     try:
         logging.info("="*80)
@@ -140,9 +140,9 @@ def execute_complete_pipeline(gemini_api_keys: List[str], supabase_client: Clien
         output_manager = OutputManager()
         news_file_path = output_manager.save_clean_categorized_news(scraping_results['categorized_news'])
         
-        # Step 5-7: AI processing and template matching
+        # Step 5-7: AI processing and template matching - SINGLE API KEY
         logging.info("PHASE 2: AI Processing and Template Matching...")
-        ai_results = process_with_ai(scraping_results['categorized_news'], gemini_api_keys, supabase_client)
+        ai_results = process_with_ai(scraping_results['categorized_news'], gemini_api_key, supabase_client)
         
         # Step 8: Save clean processed memes (already done in process_with_ai)
         logging.info("STEP 8: Processed memes already saved with base64 templates and final memes")
@@ -212,11 +212,11 @@ def execute_scraping_only() -> Dict:
         logging.error(f"Scraping-only pipeline failed: {str(e)}")
         raise CustomException(e, sys)
 
-def execute_processing_only(categorized_news: Dict[str, List[Dict]], gemini_api_keys: List[str], supabase_client: Client) -> Dict:
+def execute_processing_only(categorized_news: Dict[str, List[Dict]], gemini_api_key: str, supabase_client: Client) -> Dict:
     """Execute only the AI processing phase"""
     try:
         logging.info("Executing processing-only pipeline...")
-        results = process_with_ai(categorized_news, gemini_api_keys, supabase_client)
+        results = process_with_ai(categorized_news, gemini_api_key, supabase_client)
         
         return results
         

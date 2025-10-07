@@ -153,10 +153,11 @@ Generate ALL the following in JSON format:
    CRITICAL DIALOGUE RULES:  
    - Dialogue 1: Based directly on the description, but phrased to spark meme interest (setup line).  
    - Dialogue 2: A sarcastic, buzzy punchline response to Dialogue 1.  
-   - Each dialogue must be a **single line** only (no `\\n`, no line breaks).  
+   - Each dialogue MUST be a **single line** with NO line breaks, NO \\n, NO newlines.  
    - Each dialogue must be **less than 10 words**.  
    - Language: Tnglish only.  
    - Must feel natural, conversational, and instantly meme-worthy.  
+   - DO NOT use \\n or any line breaks in dialogues.
 
    Example pattern:  
    - Dialogue 1: "Bro petrol price malli perigindi ra"  
@@ -172,12 +173,13 @@ RETURN EVERYTHING in this EXACT JSON structure:
     "emotion": "emotion_label",
     "category": "category_name", 
     "dialogues": [
-        "Dialogue 1 single-line in Tnglish", 
-        "Dialogue 2 single-line sarcastic punchline in Tnglish"
+        "Dialogue 1 single-line in Tnglish with no line breaks", 
+        "Dialogue 2 single-line sarcastic punchline in Tnglish with no line breaks"
     ],
     "hashtags": ["#TnglishViral", "#Trending", "#CategoryTag", "#MemeBuzz"]
 }}
 """
+
 # Meme Generation Constants
 MEME_TEMPLATE_WIDTH = 500
 MEME_TEMPLATE_HEIGHT = 500

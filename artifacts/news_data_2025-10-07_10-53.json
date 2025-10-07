@@ -1,0 +1,327 @@
+{
+  "timestamp": "2025-10-07T10:53:17.346726",
+  "total_articles": 60,
+  "total_images": 58,
+  "categories": [
+    "politics",
+    "movies",
+    "entertainment",
+    "sports",
+    "business",
+    "technology"
+  ],
+  "categorized_news": {
+    "politics": [
+      {
+        "content": "India/Oct 7, 2025Bihar assembly election: The veteran, the challenger, the disruptorNitish Kumar faces an election with unprecedented uncertainty, potentially his last, despite his enduring popularity and social engineering prowess.  His ability to build a diverse coalition, overcoming caste limitations, has been remarkable. However, a failure to attract industry and address youth unemployment, coupled with political flip-flops, has dimmed his star, even as the NDA campaigns with him at the forefront.",
+        "image_path": "artifacts/images/politics_toi_politics_0.jpg",
+        "url": "https://timesofindia.indiatimes.com/india/bihar-assembly-election-the-veteran-the-challenger-the-disruptor/articleshow/124352930.cms"
+      },
+      {
+        "content": "Indian student shot dead: Texas man arrested over murder of Pole Chandrashekar",
+        "image_path": "artifacts/images/politics_ht_politics_1.jpg",
+        "url": "https://www.hindustantimes.com/india-news/indian-student-shot-dead-texas-man-arrested-over-murder-of-pole-chandrashekar-in-us-101759802599993.html"
+      },
+      {
+        "content": "Bihar elections: Why Bhojpuri singer-actor Pawan Singh is back in leading role for BJP",
+        "image_path": "artifacts/images/politics_ie_politics_2.png",
+        "url": "https://indianexpress.com/article/political-pulse/bihar-elections-bhojpuri-singer-actor-pawan-singh-back-leading-role-bjp-10284238/"
+      },
+      {
+        "content": "8 Assembly bypolls to be held along with Bihar elections: What’s at stake",
+        "image_path": "artifacts/images/politics_ie_politics_3.jpg",
+        "url": "https://indianexpress.com/article/political-pulse/8-assembly-bypolls-to-be-held-along-with-bihar-elections-whats-at-stake-10291646/"
+      },
+      {
+        "content": "Bihar elections: 5 issues, people, factors to watch out for",
+        "image_path": "artifacts/images/politics_ie_politics_4.jpg",
+        "url": "https://indianexpress.com/article/political-pulse/bihar-elections-5-issues-people-factors-to-watch-out-for-10291472/"
+      },
+      {
+        "content": "India/Oct 7, 2025Bihar election: How Rahul Gandhi tuned Congress’ Bihar pitch",
+        "image_path": "artifacts/images/politics_toi_politics_5.jpg",
+        "url": "https://timesofindia.indiatimes.com/india/bihar-election-how-rahul-gandhi-tuned-congress-bihar-pitch/articleshow/124353012.cms"
+      },
+      {
+        "content": "Shortest election in 15 years for Bihar: Will RJD retain its 20%-odd vote share, and BJP climb back?",
+        "image_path": "artifacts/images/politics_ie_politics_6.jpg",
+        "url": "https://indianexpress.com/article/political-pulse/shortest-election-in-15-years-for-bihar-will-rjd-retain-its-20-odd-vote-share-and-bjp-climb-back-10291136/"
+      },
+      {
+        "content": "Newsmaker | One of Punjab’s wealthiest men, Rajinder Gupta is AAP nominee for Rajya Sabha bypoll",
+        "image_path": "artifacts/images/politics_ie_politics_7.jpg",
+        "url": "https://indianexpress.com/article/political-pulse/punjabs-wealthiest-rajinder-gupta-aap-nominee-rajya-sabha-bypoll-10289457/"
+      },
+      {
+        "content": "India/Oct 7, 2025Bihar assembly election: Out of Lalu Yadav’s shadow, Tejashwi pins poll hope on ‘MY BAAP’",
+        "image_path": "artifacts/images/politics_toi_politics_8.jpg",
+        "url": "https://timesofindia.indiatimes.com/india/bihar-assembly-election-out-of-lalu-yadavs-shadow-tejashwi-pins-poll-hope-on-my-baap/articleshow/124353089.cms"
+      },
+      {
+        "content": "Bihar assembly elections: BJP, Tejashwi eye spring in autumn of the patriarchs",
+        "image_path": "artifacts/images/politics_toi_politics_9.jpg",
+        "url": "https://timesofindia.indiatimes.com/india/bihar-assembly-elections-bjp-tejashwi-eye-spring-in-autumn-of-the-patriarchs/articleshow/124347974.cms"
+      }
+    ],
+    "movies": [
+      {
+        "content": "'Sunny Sanskari Ki Tulsi Kumari' box office collection day 4: The Varun Dhawan, Janhvi Kapoor movie crosses Rs 30 crore in 4 days, amidst competition from 'Kantara: Chapter 1'",
+        "image_path": "artifacts/images/movies_toi_movies_0.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/sunny-sanskari-ki-tulsi-kumari-box-office-collection-day-4-the-varun-dhawan-janhvi-kapoor-movie-crosses-rs-30-crore-in-4-days-amidst-competition-from-kantara-chapter-1/articleshow/124328097.cms"
+      },
+      {
+        "content": "10 anime characters stronger than Dragon Ball Super’s Zeno without breaking a sweat",
+        "image_path": "artifacts/images/movies_toi_movies_1.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/anime/10-anime-characters-stronger-than-dragon-ball-supers-zeno-without-breaking-a-sweat/articleshow/121971531.cms"
+      },
+      {
+        "content": "Sunny Sanskari Ki Tulsi Kumari box office day 5: Varun Dhawan starrer shows a dip on first Monday, mints Rs 3 cr",
+        "image_path": "artifacts/images/movies_toi_movies_2.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/sunny-sanskari-ki-tulsi-kumari-box-office-day-5-varun-dhawan-janhvi-kapoor-starrer-shows-a-dip-on-first-monday-mints-rs-3-crore/articleshow/124350981.cms"
+      },
+      {
+        "content": "Lakshya Lalwani reveals how he cracked the audition process for Bollywood films",
+        "image_path": "artifacts/images/movies_ht_trending_3.jpeg",
+        "url": "https://www.hindustantimes.com/htcity/cinema/lakshya-lalwani-reveals-how-he-cracked-the-audition-process-for-bollywood-films-the-ba-ds-of-bollywood-101759750062298.html"
+      },
+      {
+        "content": "Kantara Chapter 1 box office day 5: Rishab Shetty's film mints Rs 30.50 crore on first Monday, crosses Rs 250 crore mark",
+        "image_path": "artifacts/images/movies_toi_movies_4.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/kantara-chapter-1-box-office-day-5-rishab-shettys-film-mints-rs-30-50-crore-on-first-monday-crosses-rs-250-crore-mark/articleshow/124350629.cms"
+      },
+      {
+        "content": "'Kantara: Chapter 1' box office collection day 5: The Rishab Shetty film sees drop on Monday, crosses Rs 250 crore net in India",
+        "image_path": "artifacts/images/movies_toi_movies_5.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/kantara-chapter-1-box-office-collection-day-5-live-the-rishab-shetty-film-expected-to-remain-strong-on-monday-after-crossing-rs-220-crore-on-the-opening-weekend/articleshow/124333707.cms"
+      },
+      {
+        "content": "Kantara Chapter 1 box office day 4: Rishab Shetty starrer races past Rs 200 crore, surpasses OG, Lokah Chapter 1, KGF 1",
+        "image_path": "artifacts/images/movies_toi_movies_6.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/box-office/kantara-chapter-1-box-office-day-4-rishab-shetty-starrer-races-past-rs-200-crore-surpasses-og-lokah-chapter-1-kgf-1/articleshow/124328037.cms"
+      },
+      {
+        "content": "‘New Baba Vanga’ predicts disaster through manga: Know what will happen in Japan on July 5?",
+        "image_path": "artifacts/images/movies_toi_movies_7.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/anime/new-baba-vanga-predicts-disaster-through-manga-know-what-will-happen-in-japan-on-july-5/articleshow/121833057.cms"
+      },
+      {
+        "content": "'Idli Kadai' box office collections day 6: Dhanush’s film sees sharp Monday drop; Collection falls to Rs 1.60 Cr",
+        "image_path": "artifacts/images/movies_toi_movies_8.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movies/news/idli-kadai-box-office-collections-day-6-dhanushs-film-sees-sharp-monday-drop-collection-falls-to-rs-1-60-cr/articleshow/124350756.cms"
+      },
+      {
+        "content": "'Idli Kadai' box office collection day 6 (Live): Dhanush starrer nears Rs 40 crore, strong word of mouth reviews drives rural drama",
+        "image_path": "artifacts/images/movies_toi_movies_9.jpg",
+        "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movies/news/idli-kadai-box-office-collection-day-6-live-dhanush-starrer-nears-rs-40-crore-strong-word-of-mouth-reviews-drives-rural-drama/articleshow/124337817.cms"
+      }
+    ],
+    "entertainment": [
+      {
+        "content": "Taylor Swift on retirement rumours: Shockingly offensive thing to say",
+        "image_path": "artifacts/images/entertainment_indiatoday_entertainment_0.jpg",
+        "url": "https://www.indiatoday.in/entertainment/music/story/taylor-swift-retirement-rumours-shockingly-offensive-thing-to-say-2798747-2025-10-06"
+      },
+      {
+        "content": "‘Bengaluru back to normal’: Viral photos capture Dasara calm vs weekday traffic",
+        "image_path": "artifacts/images/entertainment_ht_trending_1.jpg",
+        "url": "https://www.hindustantimes.com/cities/bengaluru-news/bengaluru-back-to-normal-viral-post-shows-stark-contrast-between-dasara-calm-and-post-holiday-chaos-101759804402690.html"
+      },
+      {
+        "content": "Zomato bill from 7 years ago goes viral: No delivery charge, no platform fee",
+        "image_path": "artifacts/images/entertainment_ht_trending_2.jpg",
+        "url": "https://www.hindustantimes.com/trending/zomato-bill-from-7-years-ago-goes-viral-no-delivery-charge-no-platform-fee-101759799994511.html"
+      },
+      {
+        "content": "Will order pizzas randomly: US official's witty take on viral Pentagon theory",
+        "image_path": "artifacts/images/entertainment_indiatoday_trending_3.jpg",
+        "url": "https://www.indiatoday.in/trending-news/story/us-defence-secretary-pete-hegseth-on-pentagon-pizza-report-viral-theory-2798622-2025-10-06"
+      },
+      {
+        "content": "Tourists from Bihar litter in Darjeeling, man makes them clean up in viral video",
+        "image_path": "artifacts/images/entertainment_indiatoday_trending_4.jpg",
+        "url": "https://www.indiatoday.in/trending-news/story/darjeeling-man-forces-tourists-from-bihar-to-pick-up-litter-soiled-diaper-confrontation-video-viral-2798584-2025-10-06"
+      },
+      {
+        "content": "4-foot cobra found hiding behind dressing table in Madhya Pradesh home. Video viral",
+        "image_path": "artifacts/images/entertainment_indiatoday_trending_5.jpg",
+        "url": "https://www.indiatoday.in/trending-news/story/4-foot-cobra-found-hiding-behind-dressing-table-in-madhya-pradesh-home-viral-video-2798492-2025-10-06"
+      },
+      {
+        "content": "Uber India head texts Delhi man after his post on fare discrepancies goes viral",
+        "image_path": "artifacts/images/entertainment_indiatoday_trending_6.jpg",
+        "url": "https://www.indiatoday.in/trending-news/story/uber-india-head-texts-delhi-man-after-his-post-on-fare-discrepancies-goes-viral-2798058-2025-10-05"
+      },
+      {
+        "content": "Men trade slaps, kicks during argument inside Delhi Metro coach. Video viral",
+        "image_path": "artifacts/images/entertainment_indiatoday_trending_7.jpg",
+        "url": "https://www.indiatoday.in/trending-news/story/delhi-metro-fight-between-two-men-turns-violent-viral-video-2797912-2025-10-05"
+      },
+      {
+        "content": "Pawan Singh on wife Jyoti's cheating claims: She wanted to contest elections",
+        "image_path": "artifacts/images/entertainment_indiatoday_entertainment_8.jpg",
+        "url": "https://www.indiatoday.in/movies/celebrities/story/bhpjpuri-superstar-pawan-singh-breaks-silence-on-wife-jyoti-singh-cheating-claims-she-wanted-to-contest-elections-2798963-2025-10-07"
+      },
+      {
+        "content": "Kantara Chapter 1 box office Day 5: Solid Monday, film beats KGF 2 in Karnataka",
+        "image_path": "artifacts/images/entertainment_indiatoday_entertainment_9.jpg",
+        "url": "https://www.indiatoday.in/movies/regional-cinema/story/kantara-chapter-1-box-office-collection-crosses-rs-300-crore-globally-2798907-2025-10-07"
+      }
+    ],
+    "sports": [
+      {
+        "content": "Sports/Oct 7, 2025Suryavanshi: 14-year-old child prodigy India must fast-track like TendulkarVaibhav Suryavanshi, 14, is India’s record-breaking prodigy - creating milestones in youth ODIs, T20s, and first-class cricket. Coaches like Zubin Bharucha and Vikram Rathour believe he’s ready to be “blooded” into India A or the senior team immediately. Grounded, fearless, and far ahead of his peers, Suryavanshi could be India’s next big superstar.",
+        "image_path": "artifacts/images/sports_toi_sports_0.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/news/vaibhav-suryavanshi-the-14-year-old-child-prodigy-india-must-fast-track-like-sachin-tendulkar/articleshow/124350654.cms"
+      },
+      {
+        "content": "Sports/Oct 7, 2025Kohli, Rohit warned despite ODI selection: 'Picked because of records'Former Indian chief selector Dilip Vengsarkar has voiced concerns regarding the selection of Virat Kohli and Rohit Sharma for the upcoming ODI series against Australia. He believes it is difficult to assess their current form and fitness as they only play one format of the game. The selectors have confirmed they passed fitness tests.",
+        "image_path": "artifacts/images/sports_toi_sports_1.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/india-vs-australia/virat-kohli-rohit-sharma-warned-despite-australia-selection-picked-because-of-/articleshow/124353107.cms"
+      },
+      {
+        "content": "'Bouncing bat Law': MCC, guardian of cricket's laws, shushes Pakistan, settles run-out controversy against India",
+        "image_path": "artifacts/images/sports_toi_sports_2.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/icc-womens-world-cup-2025/bouncing-bat-law-mcc-guardian-of-crickets-laws-shushes-pakistan-settles-run-out-controversy-against-india/articleshow/124350896.cms"
+      },
+      {
+        "content": "‘Throwing pieces or taking off pants…’: Kramnik slams Hikaru-Gukesh controversy",
+        "image_path": "artifacts/images/sports_ht_sports_3.jpg",
+        "url": "https://www.hindustantimes.com/sports/others/throwing-pieces-or-taking-off-pants-kramnik-slams-hikaru-nakamura-d-gukesh-controversy-supporters-in-huge-accusation-101759762389289.html"
+      },
+      {
+        "content": "Tazmin Brits' day in Indore: Breaking Lanning's record, celebration picked by fans",
+        "image_path": "artifacts/images/sports_indiatoday_sports_4.jpg",
+        "url": "https://www.indiatoday.in/sports/cricket/story/tazmin-brits-breaks-meg-lanning-record-7th-odi-hundred-south-africa-vs-new-zealand-2798786-2025-10-06"
+      },
+      {
+        "content": "Sports/Oct 7, 2025IND vs WI: Gavaskar loses cool, calls West Indies pacers 'net bowlers'",
+        "image_path": "artifacts/images/sports_toi_sports_5.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/india-vs-west-indies/sunil-gavaskar-loses-cool-calls-west-indies-pacers-net-bowlers-after-1st-test-humbling-against-india/articleshow/124350715.cms"
+      },
+      {
+        "content": "Virat Kohli, Rohit Sharma warned despite Australia selection: 'Picked because of ...'",
+        "image_path": null,
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/india-vs-australia/virat-kohli-rohit-sharma-warned-despite-australia-selection-picked-because-of-/articleshow/124353107.cms"
+      },
+      {
+        "content": "'Rohit Sharma will be 41 during 2027 World Cup': Former cricketer justifies India's captaincy change in ODIs",
+        "image_path": "artifacts/images/sports_toi_sports_7.jpg",
+        "url": "https://timesofindia.indiatimes.com/sports/cricket/news/rohit-sharma-will-be-41-during-2027-world-cup-former-cricketer-justifies-indias-captaincy-change-in-odis/articleshow/124350792.cms"
+      },
+      {
+        "content": "Rohit Sharma non-committal about World Cup? Expect more bad news then, says Gavaskar",
+        "image_path": "artifacts/images/sports_indiatoday_sports_8.jpg",
+        "url": "https://www.indiatoday.in/sports/cricket/story/sunil-gavaskar-rohit-sharma-2027-world-cup-warning-2798685-2025-10-06"
+      },
+      {
+        "content": "Yusuf Dikec returns with his aura farming: Turkish shooter wins European gold",
+        "image_path": "artifacts/images/sports_indiatoday_sports_9.jpg",
+        "url": "https://www.indiatoday.in/sports/other-sports/story/yusuf-dikec-turkish-shooter-european-championship-gold-medal-aura-farming-2798649-2025-10-06"
+      }
+    ],
+    "business": [
+      {
+        "content": "Gold hits new highs again: What is driving the rally and should you invest now?",
+        "image_path": "artifacts/images/business_moneycontrol_0.jpg",
+        "url": "https://www.moneycontrol.com/news/business/personal-finance/gold-hits-new-highs-again-what-is-driving-the-rally-and-should-you-invest-now-13600342.html"
+      },
+      {
+        "content": "From 6 phases in 2010 to just 2 now - Bihar to see shortest election in decades",
+        "image_path": "artifacts/images/business_livemint_1.jpg",
+        "url": "https://www.livemint.com/elections/assembly-elections/bihar-election-2025-from-6-phases-in-2010-to-just-2-now-how-poll-duration-has-shrunk-over-the-years-11759801703763.html"
+      },
+      {
+        "content": "Overcapacity alert: Battery makers’ path to profit lies beyond electric vehicles",
+        "image_path": "artifacts/images/business_livemint_2.jpg",
+        "url": "https://www.livemint.com/news/india/overcapacity-alert-battery-makers-profit-electric-vehicles-gigafactories-investments-11759748864844.html"
+      },
+      {
+        "content": "Prime Exclusives",
+        "image_path": null,
+        "url": "https://economictimes.indiatimes.com/prime?source=homepage&medium=prime_exclusives_header&campaign=prime_discovery"
+      },
+      {
+        "content": "Sacramento helicopter crash: Medical chopper hits Highway 50 | Videos",
+        "image_path": "artifacts/images/business_livemint_4.jpg",
+        "url": "https://www.livemint.com/news/california-news-helicopter-crashes-on-sacramento-s-highway-50-several-critically-injured-11759806879045.html"
+      },
+      {
+        "content": "Shilpa Shetty questioned for 4.5 hours by EoW in  ₹60 Crore business scam case",
+        "image_path": "artifacts/images/business_livemint_5.jpg",
+        "url": "https://www.livemint.com/news/india/shilpa-shetty-questioned-for-4-5-hours-by-eow-in-rs-60-crore-business-scam-case-11759804812029.html"
+      },
+      {
+        "content": "The Nikkei-225 has hit a record high but can Sanae Takaichi fix Japan’s economy?",
+        "image_path": "artifacts/images/business_livemint_6.jpg",
+        "url": "https://www.livemint.com/opinion/online-views/nikkei-225-record-high-sanae-takaichi-first-woman-pm-bank-of-japan-monetary-policy-outlook-yen-carry-trade-boj-immigrant-11759759726143.html"
+      },
+      {
+        "content": "US sanctions-hit Russian energy giant in talks for LNG terminal at Kakinada port",
+        "image_path": "artifacts/images/business_livemint_7.jpg",
+        "url": "https://www.livemint.com/industry/energy/gazprom-lng-terminal-kakinada-port-india-gail-us-sanctions-russian-oil-lng-rosneft-maritime-11759741018709.html"
+      },
+      {
+        "content": "Why music rights violation is a much bigger risk to a film than thought",
+        "image_path": "artifacts/images/business_livemint_8.jpg",
+        "url": "https://www.livemint.com/industry/media/ilaiyaraaja-copyright-battle-good-bad-ugly-film-exhibition-copyright-infringement-madras-high-court-mythri-netflix-11759654153220.html"
+      },
+      {
+        "content": "From scale to innovation: What India needs to compete in a fragmented world",
+        "image_path": "artifacts/images/business_livemint_9.jpg",
+        "url": "https://www.livemint.com/industry/ceo-roundtable-jsa-dp-world-suzlon-kec-warburg-pincus-waaree-gokaldas-omniactive-tkil-industries-11759743627567.html"
+      }
+    ],
+    "technology": [
+      {
+        "content": "Indian manager denies sick leave to employee with headache, WhatsApp chat goes viral",
+        "image_path": "artifacts/images/technology_indiatoday_trending_0.jpg",
+        "url": "https://www.indiatoday.in/trending-news/story/indian-manager-denies-sick-leave-to-employee-with-headache-whatsapp-chat-viral-2798020-2025-10-05"
+      },
+      {
+        "content": "Is PlayStation shutting down PS4 servers? Here's the truth behind viral claim",
+        "image_path": "artifacts/images/technology_ht_trending_1.jpg",
+        "url": "https://www.hindustantimes.com/trending/is-playstation-shutting-down-ps4-servers-heres-the-truth-behind-viral-claim-101759789074710.html"
+      },
+      {
+        "content": "Bengaluru HSR resident mocks BBMP’s road repair ‘loyalty program’ in viral rant",
+        "image_path": "artifacts/images/technology_ht_trending_2.jpg",
+        "url": "https://www.hindustantimes.com/cities/bengaluru-news/dig-10-times-get-1-free-bengaluru-hsr-resident-mocks-bbmp-s-road-repair-loyalty-program-in-viral-rant-101759757650515.html"
+      },
+      {
+        "content": "Indian Railways passenger rants about loud women chatting at midnight in viral post",
+        "image_path": "artifacts/images/technology_indiatoday_trending_3.png",
+        "url": "https://www.indiatoday.in/trending-news/story/indian-railways-passenger-rants-about-loud-women-chatting-at-midnight-in-viral-post-2798635-2025-10-06"
+      },
+      {
+        "content": "3 ways Google aims to support the 2024 Indian General Elections",
+        "image_path": "artifacts/images/technology_toi_technology_4.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/google-gets-ready-for-elections-in-india-with-new-features-and-more/articleshow/108432040.cms"
+      },
+      {
+        "content": "Google Maps to get better with directions with future updates, here’s what’s changing",
+        "image_path": "artifacts/images/technology_toi_technology_5.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/google-maps-to-get-better-with-directions-with-future-updates-heres-whats-changing/articleshow/108392934.cms"
+      },
+      {
+        "content": "Teen Innovator Soars to New Heights: Mehar Singh Breaks Guinness World Record with Lightning-Fast Drone Ascent",
+        "image_path": "artifacts/images/technology_toi_technology_6.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/teen-innovator-soars-to-new-heights-mehar-singh-breaks-guinness-world-record-with-lightning-fast-drone-ascent/articleshow/112866457.cms"
+      },
+      {
+        "content": "How do graphic designers convert JPG to PDF (Portable Document Format)?",
+        "image_path": "artifacts/images/technology_toi_technology_7.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/how-do-graphic-designers-convert-jpg-to-pdf-portable-document-format/articleshow/110598784.cms"
+      },
+      {
+        "content": "Samsung Galaxy A55 vs Vivo V30 Pro: How the two affordable premium Android phones compare",
+        "image_path": "artifacts/images/technology_toi_technology_8.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/samsung-galaxy-a55-vs-vivo-v30-pro-how-the-two-affordable-premium-android-phones-compare/articleshow/108555889.cms"
+      },
+      {
+        "content": "iQoo Z9 Turbo new leak reveals key specifications: All the details",
+        "image_path": "artifacts/images/technology_toi_technology_9.jpg",
+        "url": "https://timesofindia.indiatimes.com/gadgets-news/iqoo-z9-turbo-new-leak-reveals-key-specifications-all-the-details/articleshow/108560666.cms"
+      }
+    ]
+  }
+}
